@@ -1,0 +1,27 @@
+<%-include("partial/header.ejs") %>
+
+<div class="formbox">
+  <h1 class="head"><%= isEditing ? "Edit your Old Entry" : "Create A New Blog Post :)" %></h1>
+
+  <form action="<%= isEditing ? '/edit/' + post.id : '/post' %>" method="POST">
+    <!-- Post Title -->
+    <label for="post"><h3 class="tag">Post Title</h3></label>
+    <input type="text" id="post" name="post" value="<%= post ? post.title : '' %>" placeholder="<%= !isEditing ? 'Blog Name' : '' %>" maxlength="80" required>
+
+    <!-- Author -->
+    <label for="author"><h3 class="tag">Post Author</h3></label>
+    <input type="text" id="author" name="author" value="<%= post ? post.author : '' %>" placeholder="<%= !isEditing ? 'Author Name' : '' %>" maxlength="40" required>
+
+    <!-- Content -->
+    <label for="article"><h3 class="tag">Post Content</h3></label>
+    <textarea id="article" name="article" placeholder="<%= !isEditing ? 'Blog Content' : '' %>" rows="8" maxlength="2000" required><%= post ? post.content : '' %></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submitbtn"><%= isEditing ? 'Update Entry' : 'Create New Blog!' %></button>
+  </form>
+</div>
+
+
+<%- include("partial/footer.ejs") %>
+
+     

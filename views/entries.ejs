@@ -1,0 +1,32 @@
+<%-include("partial/header.ejs") %>
+
+<h1 class="head">Journal Entries!</h1>
+
+<%if(locals.posts.length>0){%>
+  
+    <h3 class="tag">Go deep and dark, but do not drown (Just keep swimming). Happy Reading!</h3>
+<% posts.forEach((post,index)=>{%>
+   <div class="entry">
+    <h4><%=post.title%></h4>
+    <h5>By <%=post.author%></h5>
+    <p><%=post.content%></p>
+    <hr>
+    <div style="display: flex; gap: 50px; align-items: center;">
+  <form action="/edit/<%= post.id %>" method="GET" style="flex: none;">
+    <button type="submit" class="edit-delete">Edit</button>
+  </form>
+
+  <form action="/delete/<%= post.id %>" method="POST" style="flex: none;">
+    <button type="submit" class="edit-delete">Delete</button>
+  </form>
+</div>
+
+
+    </div>
+<%});%>
+<%} else{%>
+  <h3 class="tag">No Entries yet! Create one now!</h3>
+<%}%>
+
+
+<%-include("partial/footer.ejs") %>
