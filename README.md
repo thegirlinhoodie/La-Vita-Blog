@@ -2,6 +2,11 @@
 
 La Vita Journal is a simple, elegant blogging platform designed to help users express their thoughts, stories, and ideas through blog posts. Built with Node.js, Express, and EJS, it offers a smooth, minimalistic interface for creating, editing, and managing personal journal entries or blogs.
 
+## 🚀 Live Demo
+
+Check out the live site here: (https://la-vita-blog.onrender.com)
+
+
 ## About La Vita Journal
 
 In today’s fast-paced digital world, having a space to write freely and preserve your unique voice is priceless. La Vita Journal focuses on providing:
